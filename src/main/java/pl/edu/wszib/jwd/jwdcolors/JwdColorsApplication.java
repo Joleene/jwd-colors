@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 
-//@PropertySource("classpath:db-postgres.properties")
+//@PropertySource("classpath:db-postgres.propertiees")
 @SpringBootApplication
 public class JwdColorsApplication {
 
