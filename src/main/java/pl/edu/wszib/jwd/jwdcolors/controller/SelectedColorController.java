@@ -21,12 +21,13 @@ public class SelectedColorController {
 
     @Autowired
     SelectedColorService selectedColorService;
-    @GetMapping({"/select", "select/{color}"})
-    public String selectedColorPage(@PathVariable(required = false) String color, Model model) {
 
-        if(!StringUtils.isEmpty(color)) {
+
+    @GetMapping({"/select", "/select/{color}"})
+    public String selectedColorPage(@PathVariable(required = false) String color,  Model model) {
+
+        if (!StringUtils.isEmpty(color)) {
             selectedColorService.save(color);
-
         }
 
         String[][] colors = {
@@ -36,10 +37,13 @@ public class SelectedColorController {
                 {"navy","white", "aqua", "fuchsia"}
         };
 
-        model.addAttribute("tile", title);
+        model.addAttribute("title", title);
         model.addAttribute("colors", colors);
         return "select";
-
     }
 
+    @GetMapping("/")
+    public String showIndex() {
+        return "redirect:select";
+    }
 }

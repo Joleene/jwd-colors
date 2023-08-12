@@ -29,7 +29,7 @@ public class StatController {
         model.addAttribute("title", title);
         model.addAttribute("labels", dataMap.keySet());
         model.addAttribute("data", dataMap.values());
-        model.addAttribute("backgrounds", ColorHelper.convertColors(dataMap.keySet()));
+//        model.addAttribute("backgrounds", ColorHelper.convertColors(dataMap.keySet()));
 
         return "stat";
     }
